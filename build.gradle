@@ -1,0 +1,40 @@
+plugins {
+    id "java"
+}
+
+group "me.stank"
+version "1.0-SNAPSHOT"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    testcontainers_version = "1.12.2"
+    junit_version = "5.3.1"
+}
+dependencies {
+    testImplementation "org.testcontainers:testcontainers:${testcontainers_version}"
+    testImplementation "org.testcontainers:mssqlserver:${testcontainers_version}"
+    testImplementation "org.testcontainers:junit-jupiter:${testcontainers_version}"
+    testImplementation "org.testcontainers:mysql:${testcontainers_version}"
+    testImplementation "org.testcontainers:postgresql:${testcontainers_version}"
+    testImplementation "org.testcontainers:mariadb:${testcontainers_version}"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit_version}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit_version}"
+
+    testRuntimeOnly "postgresql:postgresql:9.1-901.jdbc3"
+    testRuntimeOnly "com.microsoft.sqlserver:mssql-jdbc:7.4.1.jre8"
+    testRuntimeOnly "mysql:mysql-connector-java:8.0.17"
+    testRuntimeOnly "org.mariadb.jdbc:mariadb-java-client:2.5.0"
+    testRuntimeOnly "org.slf4j:slf4j-simple:1.7.28"
+
+}
+
+test {
+    useJUnitPlatform()
+}
+

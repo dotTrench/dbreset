@@ -1,0 +1,13 @@
+create table a (id int primary key, b_id int NULL);
+create table b (id int primary key, a_id int NULL, c_id int NULL, d_id int NULL);
+create table c (id int primary key, d_id int NULL);
+create table d (id int primary key);
+create table e (id int primary key, a_id int NULL);
+create table f (id int primary key, b_id int NULL);
+alter table a add constraint FK_a_b foreign key (b_id) references b (id);
+alter table b add constraint FK_b_a foreign key (a_id) references a (id);
+alter table b add constraint FK_b_c foreign key (c_id) references c (id);
+alter table b add constraint FK_b_d foreign key (d_id) references d (id);
+alter table c add constraint FK_c_d foreign key (d_id) references d (id);
+alter table e add constraint FK_e_a foreign key (a_id) references a (id);
+alter table f add constraint FK_f_b foreign key (b_id) references b (id);
