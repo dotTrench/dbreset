@@ -1,0 +1,50 @@
+version: 2
+updates:
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: com.microsoft.sqlserver:mssql-jdbc
+    versions:
+    - 9.1.1.jre8-preview
+    - 9.2.0.jre8
+    - 9.2.1.jre8
+    - 9.3.0.jre8-preview
+  - dependency-name: org.testcontainers:mariadb
+    versions:
+    - 1.15.1
+    - 1.15.2
+  - dependency-name: org.testcontainers:postgresql
+    versions:
+    - 1.15.1
+    - 1.15.2
+  - dependency-name: org.testcontainers:mysql
+    versions:
+    - 1.15.1
+    - 1.15.2
+  - dependency-name: org.testcontainers:junit-jupiter
+    versions:
+    - 1.15.1
+    - 1.15.2
+  - dependency-name: org.testcontainers:mssqlserver
+    versions:
+    - 1.15.1
+    - 1.15.2
+  - dependency-name: org.testcontainers:testcontainers
+    versions:
+    - 1.15.1
+    - 1.15.2
+  - dependency-name: mysql:mysql-connector-java
+    versions:
+    - 8.0.23
+  - dependency-name: org.mariadb.jdbc:mariadb-java-client
+    versions:
+    - 2.7.1
+  - dependency-name: org.junit.jupiter:junit-jupiter-engine
+    versions:
+    - 5.7.0
+  - dependency-name: org.junit.jupiter:junit-jupiter-api
+    versions:
+    - 5.7.0
